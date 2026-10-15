@@ -1,0 +1,19 @@
+{
+  "kind": "collectionType",
+  "collectionName": "pengajuan",
+  "info": { "singularName": "pengajuan", "pluralName": "daftar-pengajuan", "displayName": "Pengajuan" },
+  "options": { "draftAndPublish": false },
+  "attributes": {
+    "status": {
+      "type": "enumeration",
+      "enum": ["belum_diisi", "terkirim", "diteruskan", "diterima", "ditolak"],
+      "default": "belum_diisi",
+      "required": true
+    },
+    "dikonfirmasi_siswa": { "type": "boolean", "default": false },
+    "waktu_terkirim": { "type": "datetime" },
+    "catatan_admin": { "type": "text" },
+    "pengguna": { "type": "relation", "relation": "manyToOne", "target": "plugin::users-permissions.user" },
+    "perusahaan": { "type": "relation", "relation": "manyToOne", "target": "api::perusahaan.perusahaan" }
+  }
+}

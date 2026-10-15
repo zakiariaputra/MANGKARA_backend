@@ -1,0 +1,10 @@
+{
+  "kind": "collectionType",
+  "collectionName": "jurusan",
+  "info": { "singularName": "jurusan", "pluralName": "daftar-jurusan", "displayName": "Jurusan" },
+  "options": { "draftAndPublish": false },
+  "attributes": {
+    "kode": { "type": "string", "required": true, "unique": true },
+    "nama": { "type": "string", "required": true }
+  }
+}

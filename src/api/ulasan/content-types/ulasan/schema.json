@@ -1,0 +1,12 @@
+{
+  "kind": "collectionType",
+  "collectionName": "ulasan",
+  "info": { "singularName": "ulasan", "pluralName": "daftar-ulasan", "displayName": "Ulasan" },
+  "options": { "draftAndPublish": false },
+  "attributes": {
+    "bintang": { "type": "integer", "required": true, "min": 1, "max": 5 },
+    "isi": { "type": "text" },
+    "pengguna": { "type": "relation", "relation": "manyToOne", "target": "plugin::users-permissions.user" },
+    "perusahaan": { "type": "relation", "relation": "manyToOne", "target": "api::perusahaan.perusahaan" }
+  }
+}

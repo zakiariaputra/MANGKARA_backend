@@ -1,0 +1,92 @@
+{
+  "kind": "collectionType",
+  "collectionName": "perusahaan",
+  "info": {
+    "singularName": "perusahaan",
+    "pluralName": "daftar-perusahaan",
+    "displayName": "Perusahaan"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nama": {
+      "type": "string",
+      "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "nama"
+    },
+    "jenis": {
+      "type": "string"
+    },
+    "bidang": {
+      "type": "string"
+    },
+    "deskripsi": {
+      "type": "text"
+    },
+    "kota": {
+      "type": "string"
+    },
+    "alamat": {
+      "type": "text"
+    },
+    "link_maps": {
+      "type": "string"
+    },
+    "kuota_total": {
+      "type": "integer",
+      "default": 0
+    },
+    "sisa_kuota": {
+      "type": "integer",
+      "default": 0
+    },
+    "durasi_bulan": {
+      "type": "integer"
+    },
+    "jam_kerja": {
+      "type": "string"
+    },
+    "aktif": {
+      "type": "boolean",
+      "default": true
+    },
+    "rating_rata": {
+      "type": "decimal",
+      "default": 0
+    },
+    "jumlah_ulasan": {
+      "type": "integer",
+      "default": 0
+    },
+    "jurusan": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::jurusan.jurusan"
+    },
+    "link_google_form": {
+      "type": "string",
+      "private": true
+    },
+    "entry_email": {
+      "type": "string",
+      "private": true
+    },
+    "entry_nisn": {
+      "type": "string",
+      "private": true
+    },
+    "foto_profil_perusahaan": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    }
+  }
+}
