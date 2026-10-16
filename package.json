@@ -1,0 +1,21 @@
+{
+  "name": "mangkara-backend",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "develop": "strapi develop",
+    "start": "strapi start",
+    "build": "strapi build"
+  },
+  "dependencies": {
+    "@strapi/plugin-users-permissions": "^5.0.0",
+    "@strapi/provider-email-nodemailer": "^5.0.0",
+    "@strapi/strapi": "^5.0.0",
+    "mysql2": "^3.9.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "react-router-dom": "^6.0.0",
+    "styled-components": "^6.0.0"
+  },
+  "engines": { "node": ">=18.0.0 <=22.x.x" }
+}
