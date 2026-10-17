@@ -10,4 +10,5 @@ module.exports = {
   jenis_kelamin: { type: 'enumeration', enum: ['laki_laki', 'perempuan'] },
   portofolio: { type: 'text' },
   profil_lengkap: { type: 'boolean', default: false },
+  poto_profil: { type: 'media', multiple: false, allowedTypes: ['images'] },
 };

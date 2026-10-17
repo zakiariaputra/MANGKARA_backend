@@ -18,6 +18,11 @@ module.exports = {
     'api::profil.profil.ubahSaya',
     'api::profil.profil.lihat',
   ],
-  // belum login (halaman daftar akun butuh daftar jurusan)
-  publik: ['api::jurusan.jurusan.find'],
+  // belum login (daftar jurusan/perusahaan dan profil publik)
+  publik: [
+    'api::jurusan.jurusan.find',
+    'api::perusahaan.perusahaan.find',
+    'api::perusahaan.perusahaan.findOne',
+    'api::profil.profil.lihat',
+  ],
 };

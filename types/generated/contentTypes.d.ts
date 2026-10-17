@@ -1079,6 +1079,7 @@ export interface PluginUsersPermissionsUser
       Schema.Attribute.SetMinMaxLength<{
         minLength: 6;
       }>;
+    foto_profil_perusahaan: Schema.Attribute.Media<'images'>;
     jenis_kelamin: Schema.Attribute.Enumeration<['laki_laki', 'perempuan']>;
     jurusan: Schema.Attribute.Enumeration<['AKL', 'MPLB', 'PM', 'PPLG']>;
     kota: Schema.Attribute.String;
@@ -1096,7 +1097,7 @@ export interface PluginUsersPermissionsUser
         minLength: 6;
       }>;
     portofolio: Schema.Attribute.Text;
-    poto_profil: Schema.Attribute.Media<'images' | 'files'>;
+    poto_profil: Schema.Attribute.Media<'images'>;
     profil_lengkap: Schema.Attribute.Boolean &
       Schema.Attribute.DefaultTo<false>;
     provider: Schema.Attribute.String;

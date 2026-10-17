@@ -105,8 +105,14 @@
       "type": "media",
       "multiple": false,
       "allowedTypes": [
-        "images",
-        "files"
+        "images"
+      ]
+    },
+    "foto_profil_perusahaan": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
       ]
     }
   }
