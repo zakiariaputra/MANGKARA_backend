@@ -62,11 +62,11 @@ Endpoint aplikasi:
 | Method | Endpoint | Akses | Keterangan |
 | --- | --- | --- | --- |
 | `GET` | `/api/daftar-jurusan` | Publik | Daftar jurusan |
-| `GET` | `/api/daftar-perusahaan` | Publik | Daftar perusahaan |
-| `GET` | `/api/daftar-perusahaan/:id` | Publik | Detail perusahaan |
+| `GET` | `/api/daftar-perusahaan` | Publik | Daftar perusahaan; gunakan `?populate=foto_profil_perusahaan` untuk menyertakan foto |
+| `GET` | `/api/daftar-perusahaan/:id` | Publik | Detail perusahaan; gunakan `?populate=foto_profil_perusahaan` untuk menyertakan foto |
 | `GET` | `/api/profil/saya` | Login | Profil lengkap akun sendiri |
 | `PUT` | `/api/profil/saya` | Login | Mengubah data profil yang diizinkan |
-| `GET` | `/api/profil/:id` | Login | Profil publik siswa |
+| `GET` | `/api/profil/:id` | Publik | Profil publik siswa, termasuk foto profil |
 | `GET` | `/api/pengajuan-saya` | Login | Daftar pengajuan akun sendiri |
 | `POST` | `/api/pengajuan/mulai` | Login | Mulai pengajuan; body berisi `perusahaan` (document ID) |
 | `POST` | `/api/pengajuan/:id/konfirmasi` | Login | Konfirmasi formulir telah dikirim |
@@ -76,6 +76,10 @@ Endpoint aplikasi:
 | `DELETE` | `/api/ulasan/:id` | Login | Menghapus ulasan milik sendiri |
 
 Endpoint daftar perusahaan juga mendukung query parameter standar Strapi seperti `filters`, `sort`, `pagination`, dan `populate`. Format respons mengikuti format respons REST Strapi kecuali endpoint khusus yang mengembalikan bentuk respons sendiri.
+
+Untuk melengkapi foto profil, kirim request `multipart/form-data` ke `PUT /api/profil/saya` dengan file pada field `poto_profil`; field profil lainnya dapat dikirim sebagai bagian dari request yang sama. Endpoint profil publik menampilkan berkas media beserta URL-nya, yang dapat digunakan untuk menampilkan foto.
+
+Foto perusahaan dapat dikelola melalui Content Manager di panel admin. Untuk mengambilnya, gunakan `GET /api/daftar-perusahaan?populate=foto_profil_perusahaan` atau `GET /api/daftar-perusahaan/:documentId?populate=foto_profil_perusahaan`. Ambil `foto_profil_perusahaan.url` dari respons; jika berupa path relatif, tambahkan origin backend, misalnya `http://localhost:1337`.
 
 Hak akses endpoint publik dan pengguna login diatur otomatis saat aplikasi mulai melalui `src/config/izin.js` dan `src/index.js`. Untuk menambah endpoint khusus, daftarkan route dan action yang sesuai di izin bootstrap. Pengelolaan data perusahaan dan pemeriksaan pengajuan dilakukan melalui panel admin.
 
