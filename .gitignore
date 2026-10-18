@@ -4,5 +4,5 @@ node_modules/
 .tmp/
 dist/
 build/
-##public/uploads/*
-##!public/uploads/.gitkeep
+public/uploads/*
+!public/uploads/.gitkeep
