@@ -1,3 +1,4 @@
+
 module.exports = ({ env }) => ({
   connection: {
     client: 'mysql',
@@ -7,6 +8,12 @@ module.exports = ({ env }) => ({
       database: env('DATABASE_NAME', 'mangkara'),
       user: env('DATABASE_USERNAME', 'root'),
       password: env('DATABASE_PASSWORD', ''),
+      ssl: env.bool('DATABASE_SSL', false)
+        ? {
+            ca: env('DATABASE_SSL_CA'),
+            rejectUnauthorized: true,
+          }
+        : false,
     },
     pool: { min: 2, max: 10 },
   },
